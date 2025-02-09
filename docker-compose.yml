@@ -1,6 +1,6 @@
 services:
   supir:
-    container_name: supir
+    container_name: supir-webui
     image: bukshee/supir-webui:v1.0
     restart: unless-stopped
     ports:

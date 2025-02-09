@@ -1,0 +1,17 @@
+services:
+  supir:
+    container_name: supir
+    image: bukshee/supir-webui:v1.0
+    restart: unless-stopped
+    ports:
+      - "3001:6688"
+    volumes:
+      - "./models:/workspace/SUPIR/models"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
